@@ -16,7 +16,7 @@ myApp.config(['$routeProvider', function($routeProvider){
 
 }]);
 
-myApp.controller('testController', function($scope){
+myApp.controller('testController', ['$scope', '$http', function($scope, $http){
 
   $scope.removeNinja = function(ninja){
     var removedNinja = $scope.ninjas.indexOf(ninja);
@@ -36,31 +36,11 @@ myApp.controller('testController', function($scope){
     $scope.newNinja.rate = "";
   };
 
-  $scope.ninjas = [
-    {
-      name: 'Yoshi',
-      belt: 'green',
-      rate: 10,
-      thumb: "content/img/yoshi.webp",
-      available: true
-    },
-    {
-      name: 'Ryu',
-      belt: 'black',
-      rate: 100,
-      thumb: "content/img/ryu.png",
-      available: true
-    },
-    {
-      name: 'Charmander',
-      belt: 'red',
-      rate: 1000,
-      thumb: "content/img/char.jpeg",
-      available: true
-    },
-  ];
+  $http.get('data/ninjas.json').then(function(response){
+    $scope.ninjas = response.data;
+  });
 
-});
+}]);
 
 // Will run when the application runs
 // myApp.run(function(){

@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Yoshi",
+    "belt": "green",
+    "rate": 10,
+    "thumb": "content/img/yoshi.webp",
+    "available": true
+  },
+  {
+    "name": "Ryu",
+    "belt": "black",
+    "rate": 100,
+    "thumb": "content/img/ryu.png",
+    "available": true
+  },
+  {
+    "name": "Charmander",
+    "belt": "red",
+    "rate": 1000,
+    "thumb": "content/img/char.jpeg",
+    "available": true
+  }
+]
