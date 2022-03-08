@@ -25,26 +25,23 @@ myApp.controller('testController', function($scope){
       name: 'Yoshi',
       belt: 'green',
       rate: 10,
+      thumb: "content/img/yoshi.webp",
       available: true
     },
     {
       name: 'Ryu',
-      belt: 'orange',
-      rate: 100,
-      available: false
-    },
-    {
-      name: 'Shaun',
       belt: 'black',
-      rate: 1000,
+      rate: 100,
+      thumb: "content/img/ryu.png",
       available: true
     },
     {
-      name: 'Henry',
-      belt: 'yellow',
-      rate: 400,
+      name: 'Charmander',
+      belt: 'red',
+      rate: 1000,
+      thumb: "content/img/char.jpeg",
       available: true
-    }
+    },
   ];
 
 });
