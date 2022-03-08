@@ -13,10 +13,15 @@
     <header ng-include="'header.html'"></header>
     <div class="content">
       <div ng-controller="testController">
-        <p>{{ message }}</p>
+        <button ng-click="order='name'">Order by Name</button>
+        <button ng-click="order='belt'">Order by Belt</button>
         <input type="text" ng-model="search">
         <ul>
-          <li ng-repeat="ninja in ninjas | orderBy: 'name' | filter: search">{{ ninja.name }} - {{ninja.rate | currency: '¥'}}</li>
+          <li ng-repeat="ninja in ninjas | orderBy: order | filter: search" ng-show="{{ ninja.available }}">
+            <h3>{{ ninja.name }} - {{ninja.rate | currency: '¥'}}</h3>
+            <div class="remove" ng-click="removeNinja(ninja)">x</div>
+            <span class="belt" style="background: {{ ninja.belt }};">{{ninja.belt}} belt</span>
+          </li>
         </ul>
       </div>
     </div>
