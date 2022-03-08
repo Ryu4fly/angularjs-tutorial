@@ -1,4 +1,20 @@
-var myApp = angular.module('myApp', [])
+var myApp = angular.module('myApp', ['ngRoute'])
+
+// Fire before the application runs
+myApp.config(['$routeProvider', function($routeProvider){
+
+  $routeProvider
+    .when('/home', {
+      templateUrl: 'views/home.html'
+    })
+    .when('/directory', {
+      templateUrl: 'views/directory.html',
+      controller: 'testController'
+    }).otherwise({
+      redirectTo: '/home'
+    });
+
+}]);
 
 myApp.controller('testController', function($scope){
 
@@ -45,14 +61,6 @@ myApp.controller('testController', function($scope){
   ];
 
 });
-
-// Fire before the application runs
-// myApp.config(function(){
-
-
-
-// });
-
 
 // Will run when the application runs
 // myApp.run(function(){
